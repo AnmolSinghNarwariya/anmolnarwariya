@@ -20,7 +20,6 @@
         }
 
         * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
         html { scroll-behavior: smooth; }
 
         body { 
@@ -44,13 +43,10 @@
             opacity: 0.5;
         }
 
-        header {
-            padding: 100px 20px 40px;
-            text-align: center;
-        }
+        header { padding: 100px 20px 40px; text-align: center; }
 
         header h1 { 
-            font-size: clamp(2rem, 6vw, 3.5rem); 
+            font-size: clamp(2.5rem, 6vw, 3.5rem); 
             margin: 0; 
             font-weight: 800;
             letter-spacing: -2px;
@@ -104,11 +100,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-split {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-        }
+        .hero-split { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
 
         .profile-card {
             background: var(--card-bg);
@@ -126,6 +118,7 @@
             object-fit: cover;
             border: 1px solid var(--accent);
             margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .card {
@@ -157,7 +150,10 @@
             border: 1px solid var(--border);
             background: #0f172a;
             flex-shrink: 0;
+            transition: transform 0.3s;
         }
+        
+        .pub-item:hover .pub-image { transform: scale(1.03); }
 
         .tag {
             font-family: 'JetBrains Mono', monospace;
@@ -209,7 +205,7 @@
             .hero-split { grid-template-columns: 1fr; }
             .pub-item { flex-direction: column-reverse; align-items: flex-start; }
             .pub-image { width: 100%; height: 180px; }
-            nav { overflow-x: auto; justify-content: flex-start; }
+            nav { overflow-x: auto; justify-content: flex-start; padding: 10px 20px; }
         }
     </style>
 </head>
@@ -222,7 +218,7 @@
 </header>
 
 <nav id="main-nav">
-    <a href="#home" class="nav-link" data-page="home">Overview</a>
+    <a href="#home" class="nav-link active-nav" data-page="home">Overview</a>
     <a href="#experience" class="nav-link" data-page="experience">Experience</a>
     <a href="#publications" class="nav-link" data-page="publications">Publications</a>
     <a href="#patents" class="nav-link" data-page="patents">Patents</a>
@@ -232,7 +228,7 @@
 
 <div class="container">
 
-    <div id="home" class="page">
+    <div id="home" class="page active">
         <div class="hero-split">
             <aside class="profile-card">
                 <img src="anmol2.png" alt="Anmol Singh" class="profile-pic">
@@ -241,21 +237,21 @@
                 <div style="display:flex; flex-direction:column; gap:10px;">
                     <span class="tag">ASIC & FPGA Design</span>
                     <span class="tag">Hardware Security</span>
-                    <span class="tag">Machine Learning</span>
+                    <span class="tag">IC Reliability & ML</span>
                 </div>
             </aside>
             
             <main>
                 <div class="card">
                     <h3 style="margin-top:0;">Summary</h3>
-                    <p>I am a PhD Scholar in Microelectronics & VLSI with expertise in ASIC/FPGA design and embedded systems. My research focuses on hardware security, bitstream reverse engineering, and IC reliability using machine learning methodologies.</p>
+                    <p>I am a PhD Scholar specializing in Microelectronics & VLSI with a focus on hardware security and bitstream analysis. My research involves developing non-invasive methodologies for IC age estimation and reverse engineering logic from FPGA bitstreams using advanced machine learning models.</p>
                 </div>
 
                 <div class="card">
                     <h3 style="margin-top:0;">Education</h3>
                     <div class="edu-item">
                         <strong>Indian Institute of Technology, Hyderabad</strong><br>
-                        PhD in Microelectronics & VLSI | 2021 – 2025<br>
+                        PhD in Microelectronics & VLSI | 2021 – 2025 (Expected)<br>
                         <span style="color:var(--accent)">CGPA: 9.0</span>
                     </div>
                     <div class="edu-item">
@@ -263,27 +259,22 @@
                         M.Tech in Embedded Systems | 2017 – 2019<br>
                         <span style="color:var(--accent)">CGPA: 8.15</span>
                     </div>
-                    <div class="edu-item">
-                        <strong>Jabalpur Engineering College</strong><br>
-                        B.E. in Electronics & Telecommunication | 2013 – 2017<br>
-                        <span style="color:var(--accent)">CGPA: 7.21</span>
-                    </div>
                 </div>
             </main>
         </div>
     </div>
 
     <div id="experience" class="page">
-        <h2 class="section-title"><i data-lucide="briefcase"></i> Work Experience</h2>
+        <h2 class="section-title"><i data-lucide="briefcase"></i> Experience</h2>
         <div class="card">
             <h3 style="margin:0;">Project Scientist</h3>
             <p style="color:var(--accent); margin:5px 0;">IIT Delhi | Jan 2020 – Jul 2020</p>
-            <p>Real-time air pollution analysis using vehicle-mounted sensors and Google Cloud Platform.</p>
+            <p>Developed real-time IoT systems for environmental monitoring using Google Cloud and high-precision sensor nodes.</p>
         </div>
         <div class="card">
             <h3 style="margin:0;">Project Assistant</h3>
             <p style="color:var(--accent); margin:5px 0;">CSIR-CEERI, Pilani | Jun 2019 – Dec 2019</p>
-            <p>H.264 encoded video surveillance systems on Nvidia Jetson TX2.</p>
+            <p>Implemented H.264 video encoding pipelines on Nvidia Jetson platforms for secure surveillance applications.</p>
         </div>
     </div>
 
@@ -292,94 +283,85 @@
         
         <div class="pub-item">
             <div class="pub-info">
-                <span class="tag">IEEE TVLSI 2025</span>
+                <span class="tag">IEEE TVLSI</span>
                 <h3 style="margin:10px 0;">Leveraging IO Pad Protection Diodes for Recycled IC Detection</h3>
-                <p style="color:var(--text-secondary); font-size: 0.9rem;">Detection and age estimation using polynomial regression methodologies.</p>
-                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Advanced age estimation using polynomial regression to secure the IC supply chain.</p>
+                <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Anmol%20Singh%20Narwariya" target="_blank" class="link-btn"><i data-lucide="external-link"></i> View Journal</a>
             </div>
-            <img src="p1.png" alt="Paper Image 1" class="pub-image">
+            <img src="p1.png" alt="Paper Diagram" class="pub-image">
         </div>
 
         <div class="pub-item">
             <div class="pub-info">
-                <span class="tag">IEEE TCAD 2024</span>
+                <span class="tag">IEEE TCAD</span>
                 <h3 style="margin:10px 0;">Non-invasive Methodology for Age Estimation of ICs</h3>
-                <p style="color:var(--text-secondary); font-size: 0.9rem;">Utilizing Gaussian Process Regression for high-accuracy IC aging analysis.</p>
-                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Gaussian Process Regression based analysis for high-precision reliability characterization.</p>
+                <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Anmol%20Singh%20Narwariya" target="_blank" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
             </div>
-            <img src="p2.png" alt="Paper Image 2" class="pub-image">
+            <img src="p2.png" alt="GPR Analysis" class="pub-image">
         </div>
 
         <div class="pub-item">
             <div class="pub-info">
                 <span class="tag">IEEE ISCAS 2025</span>
                 <h3 style="margin:10px 0;">REVBIT 2.0: Reverse Engineering of Bitstream</h3>
-                <p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction, Boolean logic, and pin combination identification.</p>
-                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Extracting LUT configurations and Boolean logic directly from FPGA bitstream headers.</p>
+                <a href="https://iscas2025.org/" target="_blank" class="link-btn"><i data-lucide="external-link"></i> Conference Link</a>
             </div>
-            <img src="p3.png" alt="Paper Image 3" class="pub-image">
+            <img src="p3.png" alt="Bitstream Mapping" class="pub-image">
         </div>
 
         <div class="pub-item">
             <div class="pub-info">
                 <span class="tag">IEEE DFT 2022</span>
                 <h3 style="margin:10px 0;">IC Age Estimation using Gaussian Process Regression</h3>
-                <p style="color:var(--text-secondary); font-size: 0.9rem;">Foundational research on IC aging characterization.</p>
-                <a href="https://doi.org/10.1109/DFT56152.2022.9962355" target="_blank" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Presented at the International Symposium on Defect and Fault Tolerance in VLSI.</p>
+                <a href="https://doi.org/10.1109/DFT56152.2022.9962355" target="_blank" class="link-btn"><i data-lucide="external-link"></i> DOI: 10.1109/DFT.2022</a>
             </div>
-            <img src="p5.png" alt="Paper Image 5" class="pub-image">
+            <img src="p5.png" alt="DFT 2022 Session" class="pub-image">
         </div>
     </div>
 
     <div id="patents" class="page">
         <h2 class="section-title"><i data-lucide="shield-check"></i> Granted Patents</h2>
-        
         <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <span class="tag">Patent No. 566646</span>
-                    <h3 style="margin:10px 0;">Reverse Engineering of Bitstream for LUT Extraction using DNN</h3>
-                    <p style="color:var(--text-secondary); font-size:0.9rem;">Indian Patent | Granted: May 26, 2025</p>
-                </div>
-                <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Search Patent</a>
-            </div>
+            <span class="tag">Patent No. 566646</span>
+            <h3>Reverse Engineering of Bitstream for LUT Extraction using DNN</h3>
+            <p style="color:var(--text-secondary);">Indian Patent Granted | May 26, 2025</p>
+            <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Official IP Search</a>
         </div>
-
         <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <span class="tag">Patent No. 565561</span>
-                    <h3 style="margin:10px 0;">Method for Extracting Look-Up Table and Determining Boolean Function</h3>
-                    <p style="color:var(--text-secondary); font-size:0.9rem;">Indian Patent | Granted: April 25, 2025</p>
-                </div>
-                <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Search Patent</a>
-            </div>
+            <span class="tag">Patent No. 565561</span>
+            <h3>Method for Extracting Look-Up Table and Determining Boolean Function</h3>
+            <p style="color:var(--text-secondary);">Indian Patent Granted | April 25, 2025</p>
+            <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Official IP Search</a>
         </div>
     </div>
 
     <div id="cv" class="page">
-        <div class="card" style="text-align:center; padding:80px 20px;">
+        <div class="card" style="text-align:center; padding:60px;">
             <i data-lucide="file-text" size="48" style="color:var(--accent); margin-bottom:20px;"></i>
-            <h2>Full Curriculum Vitae</h2>
-            <p style="color:var(--text-secondary); margin-bottom:30px;">Download the comprehensive PDF for detailed project summaries and academic honors.</p>
-            <a href="ANMOL_SINGH_NARWARIYA_IIT_HYDERABAD.pdf" class="tag" style="padding:15px 30px; font-size:1rem; cursor:pointer;" target="_blank">Download PDF</a>
+            <h2>Curriculum Vitae</h2>
+            <p style="color:var(--text-secondary); margin-bottom:30px;">Download the latest version of my academic CV.</p>
+            <a href="ANMOL_SINGH_NARWARIYA_IIT_HYDERABAD.pdf" target="_blank" class="link-btn" style="padding: 15px 40px; font-size: 1rem;">
+                <i data-lucide="download"></i> Download CV (PDF)
+            </a>
         </div>
     </div>
 
     <div id="contact" class="page">
-        <h2 class="section-title"><i data-lucide="mail"></i> Contact Information</h2>
+        <h2 class="section-title"><i data-lucide="mail"></i> Contact Info</h2>
         <div class="card">
-            <p><strong>Email:</strong> <a href="mailto:ee21resch01011@iith.ac.in" style="color:var(--accent); text-decoration:none;">ee21resch01011@iith.ac.in</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" style="color:var(--accent); text-decoration:none;">linkedin.com/in/anmol-singh-narwariya</a></p>
-            <p><strong>Phone:</strong> +91 9630229228</p>
-            <p><strong>Location:</strong> IIT Hyderabad, India</p>
+            <p><i data-lucide="mail"></i> <strong>Email:</strong> <a href="mailto:ee21resch01011@iith.ac.in" style="color:var(--accent); text-decoration:none; margin-left:10px;">ee21resch01011@iith.ac.in</a></p>
+            <p><i data-lucide="linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" style="color:var(--accent); text-decoration:none; margin-left:10px;">anmol-singh-narwariya</a></p>
+            <p><i data-lucide="map-pin"></i> <strong>Location:</strong> Lab for Hardware Security, IIT Hyderabad, India</p>
         </div>
     </div>
 
 </div>
 
-<footer style="text-align:center; padding:40px; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.8rem;">
-    © 2026 Anmol Singh Narwariya | <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" style="color:var(--text-secondary); text-decoration:none;">Connect on LinkedIn</a>
+<footer style="text-align:center; padding:60px; color:var(--text-secondary); border-top:1px solid var(--border); font-size:0.85rem;">
+    © 2026 Anmol Singh Narwariya | PhD Research Portfolio
 </footer>
 
 <script>
@@ -394,7 +376,6 @@
             link.classList.remove('active-nav');
             if(link.getAttribute('href') === `#${pageId}`) link.classList.add('active-nav');
         });
-        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     window.addEventListener('hashchange', () => {
@@ -402,6 +383,7 @@
         showPage(hash);
     });
 
+    // Initial load
     showPage(window.location.hash.substring(1) || 'home');
 </script>
 

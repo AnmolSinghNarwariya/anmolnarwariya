@@ -40,11 +40,10 @@
 
         .particle {
             position: absolute;
-            /* background is now handled by JS for randomness */
             border-radius: 50%;
             opacity: 0.08; 
-            animation: float 1s infinite linear;
-            filter: blur(2px); /* Increased blur for better bokeh feel */
+            animation: float 20s infinite linear;
+            filter: blur(2px);
         }
 
         @keyframes float {
@@ -126,11 +125,13 @@
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 35px;
+            padding: 30px;
             border-radius: 8px;
             margin-bottom: 25px;
             animation: fadeInUp 0.8s ease backwards;
         }
+        
+        .card:hover { border-color: var(--accent-gold); }
 
         .section-title {
             font-family: 'Marcellus', serif;
@@ -150,6 +151,46 @@
 
         .edu-item-inline strong { color: var(--accent-gold); display: block; font-size: 0.95rem; }
         .edu-item-inline span { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .pub-item {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .pub-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+        
+        .card:hover .pub-image { filter: grayscale(0%); }
+
+        .tag {
+            color: var(--accent-gold);
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
 
         footer {
             text-align: center;
@@ -180,54 +221,27 @@
 </nav>
 
 <div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<div id="home" class="page active">
-    <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-        
-        <div style="text-align: center;">
-            <img src="anmol2.png" alt="Anmol Narwariya" style="width: 200px; height: 200px; object-fit: cover; border: 1px solid var(--accent-gold); padding: 5px; border-radius: 4px; margin-bottom: 25px;">
-            
-            <div style="font-size: 0.9rem; color: var(--accent-gold); display: flex; flex-direction: column; gap: 12px; align-items: center;">
-                <span><i data-lucide="map-pin" style="width:16px; height:16px; vertical-align:text-bottom;"></i> Hyderabad, India</span>
-                <span><i data-lucide="mail" style="width:16px; height:16px; vertical-align:text-bottom;"></i> ee21resch01011@iith.ac.in</span>
-                
-                <div style="display: flex; gap: 25px; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 20px; width: 100%; justify-content: center;">
-                    <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" title="LinkedIn" style="color: var(--accent-gold);">
-                        <i class="fa-brands fa-linkedin" style="font-size: 24px;"></i>
-                    </a>
-                    
-                    <a href="https://scholar.google.com/citations?user=zkOaAJ4AAAAJ&hl=en" target="_blank" title="Google Scholar" style="color: var(--accent-gold);">
-                        <i class="fa-solid fa-graduation-cap" style="font-size: 24px;"></i>
-                    </a>
-                    
-                    <a href="https://github.com/AnmolSinghNarwariya" target="_blank" title="GitHub" style="color: var(--accent-gold);">
-                        <i class="fa-brands fa-github" style="font-size: 24px;"></i>
-                    </a>
-                    </a>
+    <div id="home" class="page active">
+        <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
+            <div style="text-align: center;">
+                <img src="anmol2.png" alt="Anmol Narwariya" style="width: 200px; height: 200px; object-fit: cover; border: 1px solid var(--accent-gold); padding: 5px; border-radius: 4px; margin-bottom: 25px;">
+                <div style="font-size: 0.9rem; color: var(--accent-gold); display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                    <span><i data-lucide="map-pin" style="width:16px; height:16px; vertical-align:text-bottom;"></i> Hyderabad, India</span>
+                    <span><i data-lucide="mail" style="width:16px; height:16px; vertical-align:text-bottom;"></i> ee21resch01011@iith.ac.in</span>
+                    <div style="display: flex; gap: 25px; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 20px; width: 100%; justify-content: center;">
+                        <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" title="LinkedIn" style="color: var(--accent-gold);"><i class="fa-brands fa-linkedin" style="font-size: 24px;"></i></a>
+                        <a href="https://scholar.google.com/citations?user=zkOaAJ4AAAAJ&hl=en" target="_blank" title="Google Scholar" style="color: var(--accent-gold);"><i class="fa-solid fa-graduation-cap" style="font-size: 24px;"></i></a>
+                        <a href="https://github.com/AnmolSinghNarwariya" target="_blank" title="GitHub" style="color: var(--accent-gold);"><i class="fa-brands fa-github" style="font-size: 24px;"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-
             <div>
                 <h2 class="section-title" style="margin-top: 0; font-size: 1.5rem;">Academic Journey</h2>
-                
-                <div class="edu-item-inline">
-                    <strong>Indian Institute of Technology, Hyderabad</strong>
-                    <span>PhD in Microelectronics & VLSI | 2021 – 2025</span>
-                </div>
-
-                <div class="edu-item-inline">
-                    <strong>Malaviya National Institute of Technology, Jaipur</strong>
-                    <span>M.Tech in Embedded Systems | 2017 – 2019</span>
-                </div>
-
-                <div class="edu-item-inline">
-                    <strong>Jabalpur Engineering College</strong>
-                    <span>B.E. in Electronics & Telecommunication | 2013 – 2017</span>
-                </div>
-
+                <div class="edu-item-inline"><strong>Indian Institute of Technology, Hyderabad</strong><span>PhD in Microelectronics & VLSI | 2021 – 2025</span></div>
+                <div class="edu-item-inline"><strong>Malaviya National Institute of Technology, Jaipur</strong><span>M.Tech in Embedded Systems | 2017 – 2019</span></div>
+                <div class="edu-item-inline"><strong>Jabalpur Engineering College</strong><span>B.E. in Electronics & Telecommunication | 2013 – 2017</span></div>
                 <h2 class="section-title" style="margin-top: 30px; font-size: 1.5rem;">Research Focus</h2>
                 <p style="font-size: 0.95rem;">Bridging hardware architecture and hardware security through <b>Bitstream Reverse Engineering</b> and <b>Hardware Trojan Detection</b>. Utilizing Machine Learning to secure global IC supply chains.</p>
             </div>
@@ -251,54 +265,64 @@
     <div id="publications" class="page">
         <h2 class="section-title"><i data-lucide="book-open"></i> Publication Record</h2>
         
-        <div class="pub-item">
-            <div>
-                <span class="tag">IEEE TVLSI 2025</span>
-                <h3>Leveraging IO Pad Protection Diodes for Recycled IC Detection and Age Estimation Using Polynomial Regression</h3>
-                <p style="color: var(--text-secondary);">Novel methodology for age estimation of ICs via protection circuitry.</p>
-                <a href="https://ieeexplore.ieee.org/document/11095818" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+        <div class="card">
+            <div class="pub-item">
+                <div>
+                    <span class="tag">IEEE TVLSI 2025</span>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">Leveraging IO Pad Protection Diodes for Recycled IC Detection and Age Estimation Using Polynomial Regression</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Novel methodology for age estimation of ICs via protection circuitry.</p>
+                    <a href="https://ieeexplore.ieee.org/document/11095818" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+                </div>
+                <img src="p1.png" alt="TVLSI" class="pub-image">
             </div>
-            <img src="p1.png" alt="TVLSI" class="pub-image">
         </div>
 
-        <div class="pub-item">
-            <div>
-                <span class="tag">IEEE TCAD 2024</span>
-                <h3>Noninvasive Methodology for the Age Estimation of ICs Using Gaussian Process Regression</h3>
-                <p style="color: var(--text-secondary);">Novel methodology for age estimation of ICs using RO sensor.</p>
-                <a href="https://ieeexplore.ieee.org/document/10753478" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+        <div class="card">
+            <div class="pub-item">
+                <div>
+                    <span class="tag">IEEE TCAD 2024</span>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">Noninvasive Methodology for the Age Estimation of ICs Using Gaussian Process Regression</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Novel methodology for age estimation of ICs using RO sensor.</p>
+                    <a href="https://ieeexplore.ieee.org/document/10753478" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+                </div>
+                <img src="p2.png" alt="TCAD" class="pub-image">
             </div>
-            <img src="p2.png" alt="TCAD" class="pub-image">
         </div>
 
-        <div class="pub-item">
-            <div>
-                <span class="tag">IEEE ISCAS 2025</span>
-                <h3>REVBiT 2.0: REVerse Engineering of BiTstream for LUT Extraction, Boolean Logic, and Pin Combination Identification</h3>
-                <p style="color: var(--text-secondary);">Novel methodology for LUT information extraction from bitstream.</p>
-                <a href="https://ieeexplore.ieee.org/document/11043226" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+        <div class="card">
+            <div class="pub-item">
+                <div>
+                    <span class="tag">IEEE ISCAS 2025</span>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">REVBiT 2.0: REVerse Engineering of BiTstream for LUT Extraction, Boolean Logic, and Pin Combination Identification</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Novel methodology for LUT information extraction from bitstream.</p>
+                    <a href="https://ieeexplore.ieee.org/document/11043226" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+                </div>
+                <img src="p3.png" alt="ISCAS" class="pub-image">
             </div>
-            <img src="p3.png" alt="ISCAS" class="pub-image">
         </div>
 
-        <div class="pub-item">
-            <div>
-                <span class="tag">IEEE ISCAS 2024</span>
-                <h3>REVBiT: REVerse Engineering of BiTstream for LUT Extraction & Logic Identification</h3>
-                <p style="color: var(--text-secondary);">Novel methodology for LUT information extraction from bitstream.</p>
-                <a href="https://ieeexplore.ieee.org/document/10558465" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+        <div class="card">
+            <div class="pub-item">
+                <div>
+                    <span class="tag">IEEE ISCAS 2024</span>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">REVBiT: REVerse Engineering of BiTstream for LUT Extraction & Logic Identification</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Novel methodology for LUT information extraction from bitstream.</p>
+                    <a href="https://ieeexplore.ieee.org/document/10558465" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+                </div>
+                <img src="p4.png" alt="ISCAS" class="pub-image">
             </div>
-            <img src="p4.png" alt="ISCAS" class="pub-image">
         </div>
 
-        <div class="pub-item">
-            <div>
-                <span class="tag">IEEE DFT 2022</span>
-                <h3>Operational Age Estimation of ICs using Gaussian Process Regression</h3>
-                <p style="color: var(--text-secondary);">Novel methodology for age estimation of ICs using RO sensor.</p>
-                <a href="https://ieeexplore.ieee.org/document/9962355" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+        <div class="card">
+            <div class="pub-item">
+                <div>
+                    <span class="tag">IEEE DFT 2022</span>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">Operational Age Estimation of ICs using Gaussian Process Regression</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Novel methodology for age estimation of ICs using RO sensor.</p>
+                    <a href="https://ieeexplore.ieee.org/document/9962355" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
+                </div>
+                <img src="p5.png" alt="DFT" class="pub-image">
             </div>
-            <img src="p5.png" alt="DFT" class="pub-image">
         </div>
     </div>
 
@@ -345,28 +369,15 @@
     document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
 
     const container = document.getElementById('particles');
-    
-    // Curated color palette for a sophisticated colorful look
-    const colors = [
-        '#c5a47e', // Gold
-        '#8a745d', // Dim Gold
-        '#4a90e2', // Soft Blue
-        '#9b59b6', // Amethyst Purple
-        '#e74c3c', // Muted Red
-        '#2ecc71'  // Emerald Green
-    ];
+    const colors = ['#c5a47e', '#8a745d', '#4a90e2', '#9b59b6', '#e74c3c', '#2ecc71'];
 
     for (let i = 0; i < 35; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
-        
-        const size = Math.random() * 12 + 10; // Random size 10px to 22px
+        const size = Math.random() * 12 + 10;
         p.style.width = size + 'px';
         p.style.height = size + 'px';
-        
-        // Pick a random color from the palette
         p.style.background = colors[Math.floor(Math.random() * colors.length)];
-        
         p.style.left = Math.random() * 100 + 'vw';
         p.style.animationDuration = (Math.random() * 15 + 20) + 's';
         p.style.animationDelay = Math.random() * 20 + 's';

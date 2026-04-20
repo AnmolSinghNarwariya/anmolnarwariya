@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmol Singh Narwariya | Research Portfolio</title>
+    <title>Anmol Singh Narwariya | PhD Research Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -45,15 +45,15 @@
         }
 
         header {
-            padding: 120px 20px 60px;
+            padding: 100px 20px 40px;
             text-align: center;
         }
 
         header h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            font-size: clamp(2rem, 6vw, 3.5rem); 
             margin: 0; 
             font-weight: 800;
-            letter-spacing: -3px;
+            letter-spacing: -2px;
             background: linear-gradient(135deg, #fff 30%, var(--text-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -63,151 +63,132 @@
             color: var(--accent); 
             font-weight: 600; 
             text-transform: uppercase; 
-            letter-spacing: 4px; 
+            letter-spacing: 3px; 
             font-size: 0.8rem; 
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         nav {
             display: flex; 
             justify-content: center; 
-            background: rgba(2, 6, 23, 0.7);
+            background: rgba(2, 6, 23, 0.8);
             backdrop-filter: blur(12px);
-            padding: 12px; 
+            padding: 10px; 
             position: sticky; 
             top: 0; 
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            gap: 5px;
+            gap: 10px;
         }
 
         nav a {
             text-decoration: none; 
             color: var(--text-secondary);
-            padding: 10px 20px; 
-            border-radius: 10px;
+            padding: 8px 18px; 
+            border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
+            cursor: pointer;
         }
 
         nav a:hover { color: var(--text-primary); background: var(--border); }
-        nav a.active-nav { color: white; background: var(--accent); box-shadow: 0 4px 15px var(--accent-glow); }
+        nav a.active-nav { color: white; background: var(--accent); box-shadow: 0 4px 12px var(--accent-glow); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; min-height: 70vh; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; min-height: 75vh; }
 
-        .page { display: none; animation: fadeIn 0.6s ease-out forwards; }
+        .page { display: none; animation: fadeIn 0.5s ease-out forwards; }
         .page.active { display: block; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-split {
             display: grid;
-            grid-template-columns: 1fr 1.8fr;
-            gap: 50px;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
         }
 
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 40px;
+            border-radius: 28px;
+            padding: 35px;
             text-align: center;
             backdrop-filter: blur(10px);
+            height: fit-content;
         }
 
         .profile-pic {
-            width: 180px; height: 180px;
-            border-radius: 24px;
+            width: 160px; height: 160px;
+            border-radius: 20px;
             object-fit: cover;
             border: 1px solid var(--accent);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
-            padding: 32px;
-            border-radius: 24px;
-            margin-bottom: 24px;
+            padding: 28px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
-        /* Enhanced Publications Layout */
         .pub-item {
             display: flex;
-            gap: 30px;
-            padding: 30px;
-            border-radius: 24px;
+            gap: 25px;
+            padding: 25px;
+            border-radius: 20px;
             background: var(--card-bg);
             border: 1px solid var(--border);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             align-items: center;
-        }
-
-        .pub-item:hover {
-            border-color: var(--accent);
-            background: rgba(30, 41, 59, 0.8);
         }
 
         .pub-info { flex: 1; }
 
         .pub-image {
-            width: 240px;
-            height: 150px;
-            border-radius: 16px;
+            width: 220px;
+            height: 140px;
+            border-radius: 12px;
             object-fit: cover;
             border: 1px solid var(--border);
+            background: #0f172a;
             flex-shrink: 0;
-            background: #000;
         }
 
         .tag {
             font-family: 'JetBrains Mono', monospace;
             background: rgba(99, 102, 241, 0.1);
             color: var(--accent);
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: 4px;
             font-size: 0.7rem;
             border: 1px solid rgba(99, 102, 241, 0.2);
             text-transform: uppercase;
         }
 
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .contact-link {
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
-            padding: 20px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
         }
 
-        @media (max-width: 900px) {
+        .edu-item {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 850px) {
             .hero-split { grid-template-columns: 1fr; }
             .pub-item { flex-direction: column-reverse; align-items: flex-start; }
-            .pub-image { width: 100%; height: 200px; }
+            .pub-image { width: 100%; height: 180px; }
+            nav { overflow-x: auto; justify-content: flex-start; }
         }
     </style>
 </head>
@@ -215,15 +196,15 @@
 <body>
 
 <header>
-    <p>Hardware & Systems Researcher</p>
+    <p>PhD Scholar | Microelectronics & VLSI</p>
     <h1>Anmol Singh Narwariya</h1>
 </header>
 
 <nav id="main-nav">
     <a href="#home" class="nav-link" data-page="home">Overview</a>
+    <a href="#experience" class="nav-link" data-page="experience">Experience</a>
     <a href="#publications" class="nav-link" data-page="publications">Publications</a>
     <a href="#patents" class="nav-link" data-page="patents">Patents</a>
-    <a href="#academic" class="nav-link" data-page="academic">Teaching</a>
     <a href="#cv" class="nav-link" data-page="cv">CV</a>
     <a href="#contact" class="nav-link" data-page="contact">Contact</a>
 </nav>
@@ -234,111 +215,171 @@
         <div class="hero-split">
             <aside class="profile-card">
                 <img src="profile.jpg" alt="Anmol Singh" class="profile-pic">
-                <h2 style="font-size: 1.4rem; margin-bottom: 10px;">Researcher</h2>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">Focusing on automated hardware mapping, bitstream intelligence, and FPGA security architectures.</p>
+                <h2 style="font-size: 1.3rem; margin-bottom: 8px;">Anmol Singh Narwariya</h2>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">PhD Scholar at IIT Hyderabad</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <span class="tag">ASIC & FPGA Design</span>
+                    <span class="tag">Hardware Security</span>
+                    <span class="tag">Machine Learning</span>
+                </div>
             </aside>
             
             <main>
                 <div class="card">
-                    <h3 style="display:flex; align-items:center; gap:12px; margin-top:0;">
-                        <i data-lucide="zap" style="color:var(--accent)"></i> Research Focus
-                    </h3>
-                    <p>I specialize in extracting resource utilization data from FPGA bitstreams without source RTL access. My work bridges the gap between low-level binary analysis and high-level hardware visualization to secure and optimize heterogeneous computing platforms.</p>
+                    <h3 style="margin-top:0;">Summary</h3>
+                    <p>I am a PhD Scholar in Microelectronics & VLSI with expertise in ASIC/FPGA design and embedded systems. My research focuses on hardware security, bitstream reverse engineering, and IC reliability using machine learning methodologies.</p>
                 </div>
 
                 <div class="card">
-                    <h3 style="margin-top:0; margin-bottom: 20px;">Core Expertise</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                        <span class="tag">FPGA Analysis</span>
-                        <span class="tag">Bitstream RBT</span>
-                        <span class="tag">Xilinx Ultrascale+</span>
-                        <span class="tag">Vivado TCL</span>
-                        <span class="tag">Hardware Security</span>
-                        <span class="tag">Verilog</span>
+                    <h3 style="margin-top:0;">Education</h3>
+                    <div class="edu-item">
+                        <strong>Indian Institute of Technology, Hyderabad</strong><br>
+                        PhD in Microelectronics & VLSI | 2021 – 2025<br>
+                        <span style="color:var(--accent)">CGPA: 9.0</span>
+                    </div>
+                    <div class="edu-item">
+                        <strong>MNIT, Jaipur</strong><br>
+                        M.Tech in Embedded Systems | 2017 – 2019<br>
+                        <span style="color:var(--accent)">CGPA: 8.15</span>
+                    </div>
+                    <div class="edu-item">
+                        <strong>Jabalpur Engineering College</strong><br>
+                        B.E. in Electronics & Telecommunication | 2013 – 2017<br>
+                        <span style="color:var(--accent)">CGPA: 7.21</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-top:0;">Technical Stack</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                        <span class="tag">Verilog</span> <span class="tag">Python</span> <span class="tag">C</span> 
+                        <span class="tag">MATLAB</span> <span class="tag">Vivado</span> <span class="tag">Synopsys</span> 
+                        <span class="tag">Cadence</span> <span class="tag">FreeRTOS</span> <span class="tag">Linux</span>
                     </div>
                 </div>
             </main>
         </div>
     </div>
 
+    <div id="experience" class="page">
+        <h2 class="section-title"><i data-lucide="briefcase"></i> Work Experience</h2>
+        
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                    <h3 style="margin:0;">Project Scientist</h3>
+                    <p style="color:var(--accent); margin:5px 0;">IIT Delhi | Jan 2020 – Jul 2020</p>
+                </div>
+            </div>
+            <ul>
+                <li>Implemented embedded systems for real-time air pollution analysis using vehicle-mounted sensors.</li>
+                <li>Deployed cloud-based data processing via Google Cloud Platform for real-time monitoring.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                    <h3 style="margin:0;">Project Assistant</h3>
+                    <p style="color:var(--accent); margin:5px 0;">CSIR-CEERI, Pilani | Jun 2019 – Dec 2019</p>
+                </div>
+            </div>
+            <ul>
+                <li>Developed H.264 encoded video surveillance systems on Nvidia Jetson TX2.</li>
+                <li>Integrated GStreamer pipelines for secure data transmission and NAS storage.</li>
+            </ul>
+        </div>
+    </div>
+
     <div id="publications" class="page">
-        <h2 style="font-size: 2rem; margin-bottom: 30px;">Selected Publications</h2>
+        <h2 class="section-title"><i data-lucide="book-open"></i> Publications</h2>
         
         <div class="pub-item">
             <div class="pub-info">
-                <span class="tag">2025</span>
-                <h3 style="margin:12px 0 8px;">Real-time Resource Extraction Framework for Heterogeneous FPGAs</h3>
-                <p style="color:var(--text-secondary); font-size: 0.95rem;">Intl. Conference on FPGA Design. A framework for mapping hardware resources in 16nm architectures via direct bitstream analysis.</p>
-                <div style="margin-top: 15px;">
-                    <a href="#" class="tag" style="background:none;">View PDF</a>
-                </div>
+                <span class="tag">IEEE TVLSI 2025</span>
+                <h3 style="margin:10px 0;">Leveraging IO Pad Protection Diodes for Recycled IC Detection</h3>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Detection and age estimation using polynomial regression methodologies.</p>
             </div>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/3234994752519355570_0" alt="FPGA Resource Mapping Diagram" class="pub-image">
+            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Graph: Aging Curves]</div>
         </div>
 
         <div class="pub-item">
             <div class="pub-info">
-                <span class="tag">2024</span>
-                <h3 style="margin:12px 0 8px;">BiT-Space: Visual Analytics for Bitstream Files</h3>
-                <p style="color:var(--text-secondary); font-size: 0.95rem;">IEEE ISCAS. Introduces advanced visualization techniques for tracking BRAM/LUT usage in high-density FPGA architectures.</p>
-                <div style="margin-top: 15px;">
-                    <a href="#" class="tag" style="background:none;">IEEE Explorer</a>
-                </div>
+                <span class="tag">IEEE TCAD 2024</span>
+                <h3 style="margin:10px 0;">Non-invasive Methodology for Age Estimation of ICs</h3>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Utilizing Gaussian Process Regression for high-accuracy IC aging analysis.</p>
             </div>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/16190643944616112832_0" alt="Bitstream Visualization Dashboard" class="pub-image">
+            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Model: GPR Architecture]</div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <span class="tag">IEEE ISCAS 2025</span>
+                <h3 style="margin:10px 0;">REVBIT 2.0: Reverse Engineering of Bitstream</h3>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction, Boolean logic, and pin combination identification.</p>
+            </div>
+            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-info">
+                <span class="tag">IEEE ISCAS 2024</span>
+                <h3 style="margin:10px 0;">REVBIT: Reverse Engineering of Bitstream</h3>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction and Boolean logic.</p>
+            </div>
+            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
+        </div>
+
+        
+        <div class="pub-item">
+            <div class="pub-info">
+                <span class="tag">IEEE DFT 2022</span>
+                <h3 style="margin:10px 0;">IC Age Estimation using Gaussian Process Regression.</h3>
+                #<p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction and Boolean logic.</p>
+            </div>
+            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
         </div>
     </div>
 
     <div id="patents" class="page">
-        <h2 style="margin-bottom:30px;">Intellectual Property</h2>
-        <div class="card" style="display:flex; align-items:center; gap:25px;">
-            <i data-lucide="shield-check" size="40" style="color:var(--accent)"></i>
-            <div>
-                <h3 style="margin:0;">Automated Bitstream Logic Mapping</h3>
-                <p style="margin:5px 0; color:var(--text-secondary)">Patent No: 12/345,678 • Registered 2026</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="academic" class="page">
-        <h2 style="margin-bottom:30px;">Academic Experience</h2>
+        <h2 class="section-title"><i data-lucide="shield-check"></i> Granted Patents</h2>
+        
         <div class="card">
-            <h3>Digital System Design (Teaching Assistant)</h3>
-            <p>Mentored 50+ students in developing custom hardware accelerators on Nexys4-DDR boards. Focused on Verilog HDL optimization and timing closure.</p>
+            <span class="tag">Patent No. 566646</span>
+            <h3>Reverse Engineering of Bitstream for LUT Extraction using DNN</h3>
+            <p style="color:var(--text-secondary);">Indian Patent | Granted: May 26, 2025</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">Patent No. 565561</span>
+            <h3>Method for Extracting Look-Up Table and Determining Boolean Function</h3>
+            <p style="color:var(--text-secondary);">Indian Patent | Granted: April 25, 2025</p>
         </div>
     </div>
 
     <div id="cv" class="page">
         <div class="card" style="text-align:center; padding:80px 20px;">
             <i data-lucide="file-text" size="48" style="color:var(--accent); margin-bottom:20px;"></i>
-            <h2>Full Academic Background</h2>
-            <p style="color:var(--text-secondary); margin-bottom: 30px;">Download the latest PDF covering detailed research history and technical skills.</p>
-            <a href="cv.pdf" class="btn-primary" target="_blank"><i data-lucide="download"></i> Download CV</a>
+            <h2>Full Curriculum Vitae</h2>
+            <p style="color:var(--text-secondary); margin-bottom:30px;">Download the comprehensive PDF for detailed project summaries and academic honors.</p>
+            <a href="ANMOL_SINGH_NARWARIYA_IIT_HYDERABAD.pdf" class="tag" style="padding:15px 30px; font-size:1rem; cursor:pointer;" target="_blank">Download PDF</a>
         </div>
     </div>
 
     <div id="contact" class="page">
-        <h2 style="margin-bottom:30px;">Collaboration</h2>
-        <div class="contact-grid">
-            <a href="mailto:email@example.com" class="contact-link">
-                <i data-lucide="mail" style="color:var(--accent)"></i>
-                <span>email@example.com</span>
-            </a>
-            <a href="#" class="contact-link">
-                <i data-lucide="github" style="color:var(--accent)"></i>
-                <span>github.com/username</span>
-            </a>
-            <a href="#" class="contact-link">
-                <i data-lucide="linkedin" style="color:var(--accent)"></i>
-                <span>LinkedIn Profile</span>
-            </a>
+        <h2 class="section-title"><i data-lucide="mail"></i> Contact Information</h2>
+        <div class="card">
+            <p><strong>Email:</strong> ee21resch01011@iith.ac.in</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/anmol-singh-narwariya</p>
+            <p><strong>Phone:</strong> +91 9630229228</p>
+            <p><strong>Location:</strong> IIT Hyderabad, India</p>
         </div>
     </div>
 
 </div>
 
-<footer style="text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem;">
-    <p>© 2026 Anmol Singh Narwariya • Research Excellence</p>
+<footer style="text-align:center; padding:40px; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.8rem;">
+    © 2026 Anmol Singh Narwariya | Designed for Research Excellence
 </footer>
 
 <script>
@@ -356,7 +397,11 @@
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
-    window.addEventListener('hashchange', () => showPage(window.location.hash.substring(1)));
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.substring(1) || 'home';
+        showPage(hash);
+    });
+
     showPage(window.location.hash.substring(1) || 'home');
 </script>
 
